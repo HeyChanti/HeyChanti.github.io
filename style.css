@@ -40,14 +40,14 @@ button {
 }
 
 #yes {
-  background-color: #99ff99; 
-  color: white; 
+  background-color: #add8e6; 
+  color: black; 
   font-family: 'Garamond', bold; 
 }
 
 #no {
-  background-color: #8B0000; 
-  color: white; 
+  background-color: #ffc0cb; 
+  color: black; 
   font-family: 'Garamond', bold; 
 }
 
