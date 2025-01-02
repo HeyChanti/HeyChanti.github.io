@@ -16,7 +16,6 @@ body {
 h1 {
   font-size: 4rem; /* Adjust font size for better mobile readability */
   margin-bottom: 2rem; /* Adjust margins for better spacing on mobile */
-  color: #ff9999; 
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5); 
 }
 
@@ -53,12 +52,4 @@ button {
   font-size: 2rem; 
   margin-top: 1rem; 
   color: #ff9999; 
-  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
-}
-
-/* Media Query for smaller screens (e.g., mobile) */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 3rem; 
-  }
-}
+  text-shadow: 0
