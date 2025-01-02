@@ -13,6 +13,10 @@ body {
   text-align: center; /* Center text by default */
 }
 
+.gif-container {
+  margin-top: 100px; /* Add top margin to gif-container */
+}
+
 h1 {
   font-size: 4rem; /* Adjust font size for better mobile readability */
   margin-bottom: 2rem; /* Adjust margins for better spacing on mobile */
@@ -52,4 +56,5 @@ button {
   font-size: 2rem; 
   margin-top: 1rem; 
   color: #ff9999; 
-  text-shadow: 0
+  text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
+}
