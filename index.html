@@ -5,7 +5,7 @@
 <style>
 body {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
@@ -13,7 +13,7 @@ body {
   background-size: cover; 
   background-position: center; 
   font-family: 'Garamond', serif; 
-  overflow: hidden; /* Hide scrollbars */
+  overflow: hidden; 
   color: #000; /* Black text */
 }
 
@@ -21,7 +21,7 @@ h1 {
   text-align: center;
   font-size: 60px; 
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5); /* Soft white shadow */
-  margin-bottom: 20px; /* Add space below the heading */
+  margin-bottom: 20px; 
 }
 
 h2 {
@@ -29,7 +29,7 @@ h2 {
   justify-content: center; 
 }
 
-#yes, #no {
+button {
   padding: 15px 30px;
   font-size: 18px;
   border: none;
@@ -40,13 +40,13 @@ h2 {
 }
 
 #yes {
-  background-color: #99ff99; /* Pastel Green */
+  background-color: #99ff99; 
   color: white; 
   font-family: 'Garamond', bold; 
 }
 
 #no {
-  background-color: #8B0000; /* Dark Red */
+  background-color: #8B0000; 
   color: white; 
   font-family: 'Garamond', bold; 
 }
@@ -55,18 +55,20 @@ h2 {
   display: none;
   text-align: center; 
   font-size: 30px;
-  color: #ff9999; 
+  color: #000; /* Changed to black */ 
   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
 }
 </style>
 </head>
 <body>
 
-<h1> <strong> Would you go on 💖 a Date 💖 with me? <strong> </h1> 
+<div style="text-align: center;"> 
+  <h1> <strong> Would you go on 💖 a Date 💖 with me? <strong> </h1> 
+</div>
 
 <div> 
-  <h2><button id="yes"><strong>Yes!</strong></button></h2> 
-  <h2><button id="no"><strong>No</strong></button></h2> 
+  <h2><button id="yes"><strong>Yes!</strong></button></h2>
+  <h2><button id="no"><strong>No</strong></button></h2>
 </div>
 
 <h1 id="congratulations">I knew you would say yes!</h1> 
