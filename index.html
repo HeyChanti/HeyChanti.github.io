@@ -36,10 +36,11 @@ const moveNoButton = () => {
   noButton.style.top = y + 'px';
 };
 
-setInterval(moveNoButton, 200); // Move the button every 10 milliseconds
+setInterval(moveNoButton, 10); 
 
 yesButton.addEventListener('click', () => {
-  congratulationsMessage.style.display = 'block'; 
+  congratulationsMessage.style.display = 'block';
+  noButton.style.display = 'none'; // Hide the "No" button
 });
 </script>
 
