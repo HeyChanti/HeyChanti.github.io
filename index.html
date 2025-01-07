@@ -17,14 +17,18 @@
 
 <div class="button-container"> 
   <h2><button id="yes"><strong>Yes!</strong></button></h2>
-  <h2><button id="no"><strong>No</strong></button></h2>
+  <h2><button id="maybe"><strong>Maybe...</strong></button></h2> 
 </div>
+
+<div id="maybeButtons"></div> 
 
 <h1 id="congratulations">I knew you would say yes!</h1> 
 
 <script>
 const noButton = document.getElementById('no');
 const yesButton = document.getElementById('yes');
+const maybeButton = document.getElementById('maybe');
+const maybeButtonsContainer = document.getElementById('maybeButtons');
 const congratulationsMessage = document.getElementById('congratulations');
 
 // Make the "No" button move rapidly
@@ -36,13 +40,21 @@ const moveNoButton = () => {
   noButton.style.top = y + 'px';
 };
 
-setInterval(moveNoButton, 200); 
+setInterval(moveNoButton, 10); 
 
 yesButton.addEventListener('click', () => {
-  congratulationsMessage.style.display = 'block';
-  noButton.style.display = 'none'; // Hide the "No" button
+  congratulationsMessage.style.display = 'block'; 
+  noButton.style.display = 'none'; 
+});
+
+maybeButton.addEventListener('click', () => {
+  const newMaybeButton = document.createElement('button');
+  newMaybeButton.textContent = 'Maybe...';
+  newMaybeButton.classList.add('maybe-button'); 
+  maybeButtonsContainer.appendChild(newMaybeButton); 
 });
 </script>
 
 </body>
 </html>
+
