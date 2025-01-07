@@ -17,17 +17,17 @@
 
   <div class="button-container"> 
     <h2><button id="yes"><strong>Yes!</strong></button></h2>
-    <h2><button id="maybe"><strong>Maybe...</strong></button></h2> 
+    <h2><button id="no" class="moveable-button"><strong>No</strong></button></h2> 
   </div>
 
-  <div id="maybeButtonsContainer"></div> 
+  <div id="maybeButtons"></div> 
 
   <h1 id="congratulations">I knew you would say yes!</h1> 
 
   <script>
     const noButton = document.getElementById('no');
     const yesButton = document.getElementById('yes');
-    const initialMaybeButton = document.getElementById('maybe'); // Store the initial "Maybe..." button
+    const initialMaybeButton = document.getElementById('maybe');
     const maybeButtonsContainer = document.getElementById('maybeButtonsContainer');
     const congratulationsMessage = document.getElementById('congratulations');
 
@@ -42,6 +42,10 @@
       }
     };
 
+    // Move the "No" button on hover/touch
+    noButton.addEventListener('mouseover', moveNoButton);
+    noButton.addEventListener('touchstart', moveNoButton);
+
     setInterval(moveNoButton, 200); 
 
     yesButton.addEventListener('click', () => {
@@ -49,18 +53,15 @@
       noButton.style.display = 'none'; 
     });
 
-    // Event listener for all "Maybe..." buttons (including the initial one)
     const handleMaybeButtonClick = () => {
       const newMaybeButton = document.createElement('button');
       newMaybeButton.textContent = 'Maybe...';
       newMaybeButton.classList.add('maybe-button');
       maybeButtonsContainer.appendChild(newMaybeButton);
 
-      // Add event listener to the newly created "Maybe..." button
       newMaybeButton.addEventListener('click', handleMaybeButtonClick); 
     };
 
-    // Add event listener to the initial "Maybe..." button
     initialMaybeButton.addEventListener('click', handleMaybeButtonClick); 
 
   </script>
