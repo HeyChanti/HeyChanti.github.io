@@ -43,9 +43,13 @@
       }
     };
 
+    noButton.addEventListener('click', () => {
+      moveNoButton(); 
+    });
+
     noButton.addEventListener('mouseover', moveNoButton);
     noButton.addEventListener('touchstart', moveNoButton);
-    setInterval(moveNoButton, 1000); 
+    setInterval(moveNoButton, 2000); 
 
     yesButton.addEventListener('click', () => {
       congratulationsMessage.style.display = 'block'; 
