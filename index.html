@@ -18,9 +18,10 @@
   <div class="button-container"> 
     <h2><button id="yes"><strong>Yes!</strong></button></h2>
     <h2><button id="no" class="moveable-button"><strong>No</strong></button></h2> 
+    <h2><button id="maybe"><strong>Maybe...</strong></button></h2> 
   </div>
 
-  <div id="maybeButtons"></div> 
+  <div id="maybeButtonsContainer"></div> 
 
   <h1 id="congratulations">I knew you would say yes!</h1> 
 
@@ -42,10 +43,8 @@
       }
     };
 
-    // Move the "No" button on hover/touch
     noButton.addEventListener('mouseover', moveNoButton);
     noButton.addEventListener('touchstart', moveNoButton);
-
     setInterval(moveNoButton, 200); 
 
     yesButton.addEventListener('click', () => {
