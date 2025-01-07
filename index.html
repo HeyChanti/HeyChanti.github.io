@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HEY CHANTI!!!</title> 
-  <link rel="stylesheet" href="style.css"> 
+<title>HEY CHANTI!!!</title> 
+<link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-  <div class="container"> 
-    <div class="gif-container">
-      <iframe src="https://giphy.com/embed/kzDRwrZyamzrmHSZiF" width="480" height="271" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <p><a href="https://giphy.com/gifs/HollerStudios-animation-reaction-gif-holler-studios-kzDRwrZyamzrmHSZiF">via GIPHY</a></p>
-    </div>
-
-    <h1> <strong> Would you go on 💖 a Date 💖 with me? <strong> </h1> 
+<div class="container"> 
+  <div class="gif-container">
+    <iframe src="https://giphy.com/embed/kzDRwrZyamzrmHSZiF" width="480" height="271" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <p><a href="https://giphy.com/gifs/HollerStudios-animation-reaction-gif-holler-studios-kzDRwrZyamzrmHSZiF">via GIPHY</a></p>
   </div>
 
-  <div class="button-container"> 
-    <h2><button id="yes"><strong>Yes!</strong></button></h2>
-    <h2><button id="no"><strong>No</strong></button></h2>
-  </div>
+  <h1 style="color: #ff9999;"> <strong> Would you go on 💖 a Date 💖 with me? <strong> </h1> 
+</div>
 
-  <div id="maybeButtons"></div> 
+<div class="button-container"> 
+  <h2><button id="yes"><strong>Yes!</strong></button></h2>
+  <h2><button id="maybe"><strong>Maybe...</strong></button></h2> 
+</div>
 
-  <h1 id="congratulations">I knew you would say yes!</h1> 
+<div id="maybeButtonsContainer"></div> 
 
-  <script>
-    const noButton = document.getElementById('no');
-    const yesButton = document.getElementById('yes');
-    const maybeButton = document.getElementById('maybe'); 
-    const maybeButtonsContainer = document.getElementById('maybeButtons');
-    const congratulationsMessage = document.getElementById('congratulations');
+<h1 id="congratulations">I knew you would say yes!</h1> 
 
-    // Make the "No" button move rapidly
-    const moveNoButton = () => {
-      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-      noButton.style.position = 'absolute';
-      noButton.style.left = x + 'px';
-      noButton.style.top = y + 'px';
-    };
+<script>
+const noButton = document.getElementById('no');
+const yesButton = document.getElementById('yes');
+const maybeButton = document.getElementById('maybe');
+const maybeButtonsContainer = document.getElementById('maybeButtonsContainer'); 
+const congratulationsMessage = document.getElementById('congratulations');
 
-    setInterval(moveNoButton, 200); 
+// Make the "No" button move rapidly
+const moveNoButton = () => {
+  const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+  noButton.style.position = 'absolute';
+  noButton.style.left = x + 'px';
+  noButton.style.top = y + 'px';
+};
 
-    yesButton.addEventListener('click', () => {
-      congratulationsMessage.style.display = 'block'; 
-      noButton.style.display = 'none'; 
-    });
+setInterval(moveNoButton, 200); 
 
-    maybeButton.addEventListener('click', () => {
-      const newMaybeButton = document.createElement('button');
-      newMaybeButton.textContent = 'Maybe...';
-      newMaybeButton.classList.add('maybe-button'); 
-      maybeButtonsContainer.appendChild(newMaybeButton); 
-    });
-  </script>
+yesButton.addEventListener('click', () => {
+  congratulationsMessage.style.display = 'block'; 
+  noButton.style.display = 'none'; 
+});
+
+maybeButton.addEventListener('click', () => {
+  const newMaybeButton = document.createElement('button');
+  newMaybeButton.textContent = 'Maybe...';
+  newMaybeButton.classList.add('maybe-button'); 
+  maybeButtonsContainer.appendChild(newMaybeButton); 
+
+  // Add event listener to the newly created "Maybe..." button
+  newMaybeButton.addEventListener('click', () => {
+    const anotherNewMaybeButton = document.createElement('button');
+    anotherNewMaybeButton.textContent = 'Maybe...';
+    anotherNewMaybeButton.classList.add('maybe-button');
+    maybeButtonsContainer.appendChild(anotherNewMaybeButton);
+  });
+});
+</script>
 
 </body>
 </html>
+
